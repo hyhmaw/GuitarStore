@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+server/.env
+
+server/.agents/
+server/.claude/
+server/.cursor/
+server/.devin/
+server/.env
