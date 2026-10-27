@@ -18,7 +18,7 @@
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
 
-  color: #bdbeb3;
+  color: #7f8077;
   background: #fff;
 
   transition: background-color 0.3s ease;

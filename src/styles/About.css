@@ -41,7 +41,7 @@
 }
 
 .about-title {
-  margin: 0 0 56px;
+  margin: 0 0 25px;
 
   color: #FFF9BE;
   font-family: "Aboreto", sans-serif;
@@ -52,6 +52,8 @@
 }
 
 .about-faq {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
   display: flex;
   flex-direction: column;
   align-items: center;

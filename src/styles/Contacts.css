@@ -1,0 +1,252 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
+
+.contacts-page {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 130px 24px 80px;
+
+  background: transparent;
+  color: #000000;
+  font-family: "Aboreto", sans-serif;
+}
+
+.contacts-content {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contacts-title {
+  margin: 0 0 48px;
+
+  color: #000000;
+  font-family: "Aboreto", sans-serif;
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+}
+
+.contacts-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.contacts-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.contacts-item h2 {
+  margin: 0;
+  color: #000000;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.contacts-item a {
+  color: #86791C;
+  font-size: 14px;
+  line-height: 1.8;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: opacity 0.2s ease;
+}
+
+.contacts-item a:hover,
+.contacts-socials a:hover {
+  opacity: 0.65;
+}
+
+.contacts-form-section {
+  margin-top: 64px;
+}
+
+.contacts-section-title {
+  margin: 0 0 30px;
+
+  color: #86791C;
+  font-family: "Aboreto", sans-serif;
+  font-size: clamp(19px, 2.5vw, 25px);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+
+.contacts-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contacts-form label {
+  margin-top: 8px;
+  color: #000000;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.contacts-form input,
+.contacts-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+
+  border: 1px solid rgba(134, 121, 28, 0.45);
+  border-radius: 0;
+  outline: none;
+
+  background: transparent;
+  color: #000000;
+  font-family: "Aboreto", sans-serif;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.contacts-form input::placeholder,
+.contacts-form textarea::placeholder {
+  color: #86791C;
+  opacity: 1;
+}
+
+.contacts-form input:focus,
+.contacts-form textarea:focus {
+  border-color: #86791C;
+}
+
+.contacts-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.contacts-form button {
+  align-self: center;
+  margin-top: 18px;
+  padding: 14px 28px;
+
+  border: 1px solid #86791C;
+  border-radius: 0;
+
+  background: transparent;
+  color: #86791C;
+  font-family: "Aboreto", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.contacts-form button:hover {
+  background: #86791C;
+  color: #ffffff;
+}
+
+.contacts-social-section {
+  margin-top: 76px;
+}
+
+.contacts-social-section .contacts-section-title {
+  margin-bottom: 20px;
+}
+
+.contacts-description {
+  max-width: 620px;
+  margin: 0 auto 24px;
+
+  color: #000000;
+  font-size: 13px;
+  line-height: 2;
+  letter-spacing: 0.01em;
+}
+
+.contacts-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  font-size: 13px;
+}
+
+.contacts-socials a {
+  color: #86791C;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.contacts-socials span {
+  color: #000000;
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .contacts-page {
+    padding: 110px 22px 50px;
+  }
+
+  .contacts-title {
+    margin-bottom: 38px;
+    font-size: 34px;
+  }
+
+  .contacts-details {
+    gap: 24px;
+  }
+
+  .contacts-item h2 {
+    font-size: 15px;
+  }
+
+  .contacts-item a {
+    font-size: 12px;
+  }
+
+  .contacts-form-section {
+    margin-top: 48px;
+  }
+
+  .contacts-section-title {
+    font-size: 18px;
+  }
+
+  .contacts-form input,
+  .contacts-form textarea {
+    padding: 12px;
+    font-size: 11px;
+  }
+
+  .contacts-social-section {
+    margin-top: 58px;
+  }
+
+  .contacts-description {
+    font-size: 11px;
+    line-height: 1.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contacts-item a,
+  .contacts-socials a,
+  .contacts-form button {
+    transition: none;
+  }
+}

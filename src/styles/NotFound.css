@@ -1,0 +1,123 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
+
+.not-found-page {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 60px;
+  background: #ffffff;
+  color: #000000;
+  font-family: "Aboreto", sans-serif;
+}
+
+.not-found-content {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.not-found-code {
+  margin: 0;
+  background: linear-gradient(
+    to right,
+    #D9D9D9 0%,
+    #999999 45%,
+    #000000 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  font-family: "Aboreto", sans-serif;
+  font-size: clamp(160px, 32vw, 380px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+}
+
+.not-found-message {
+  max-width: 700px;
+  margin: 28px 0 0;
+  color: #000000;
+  font-family: "Aboreto", sans-serif;
+  font-size: clamp(32px, 1.8vw, 20px);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+}
+
+.not-found-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 42px;
+  padding: 8px 0;
+  border: none;
+  background: transparent;
+  color: #86791C;
+  font-family: "Aboreto", sans-serif;
+  font-size: clamp(32px, 1.4vw, 15px);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+
+.not-found-back:hover {
+  opacity: 0.65;
+}
+
+.not-found-arrow {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  stroke-width: 1.5;
+  transition: transform 0.25s ease;
+}
+
+.not-found-back:hover .not-found-arrow {
+  transform: translateX(-5px);
+}
+
+@media (max-width: 600px) {
+  .not-found-page {
+    padding: 100px 20px 40px;
+  }
+
+  .not-found-code {
+    font-size: clamp(140px, 38vw, 220px);
+  }
+
+  .not-found-message {
+    max-width: 340px;
+    margin-top: 24px;
+    font-size: 40px;
+    line-height: 1.9;
+  }
+
+  .not-found-back {
+    margin-top: 32px;
+    font-size: 40px;
+  }
+
+  .not-found-arrow {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .not-found-back,
+  .not-found-arrow {
+    transition: none;
+  }
+}
