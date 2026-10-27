@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import {
   Menu,
@@ -5,9 +6,9 @@ import {
   Moon,
   Sun,
   UserRound,
-  Menu as X,
+  X,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../styles/Header.css";
 
 type HeaderProps = {
@@ -15,10 +16,16 @@ type HeaderProps = {
 };
 
 export default function Header({
-  transparent = false,
+  transparent: transparentProp,
 }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+
+  const location = useLocation();
+
+  const transparent =
+    transparentProp ??
+    (location.pathname === "/" || location.pathname === "/about");
 
   const closeMenu = () => setMenuOpen(false);
 
