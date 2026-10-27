@@ -4,25 +4,34 @@
 /* HOME PAGE */
 
 .home-page {
+  position: relative;
+  width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
-
 /* HERO SECTION */
 
 .home-hero {
   position: relative;
-  flex: 1;
-  min-height: 400px;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 600px;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+
   display: flex;
   align-items: center;
+
   background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.22),
       rgba(0, 0, 0, 0.22)
     ),
-    url("/images/hero-guitar.jpg");
+    url("../img/hero-guitar.jpg");
+
   background-size: cover;
   background-position: center 43%;
   background-repeat: no-repeat;
@@ -34,7 +43,7 @@
   width: 100%;
   margin-top: 20px;
   padding: 4px 20px 10px;
-  background: rgba(100, 100, 100, 0.35);
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(3px);
 }
 

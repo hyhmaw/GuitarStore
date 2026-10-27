@@ -5,7 +5,7 @@ import {
   Moon,
   Sun,
   UserRound,
-  X,
+  Menu as X,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
@@ -67,7 +67,7 @@ export default function Header({
           {darkMode ? <Sun /> : <Moon />}
         </button>
 
-        <Link to="/account" aria-label="Account">
+        <Link to="/PersonalCabinet" aria-label="Personal cabinet">
           <UserRound />
         </Link>
       </div>

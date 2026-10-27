@@ -12,9 +12,7 @@ export default function Layout() {
   return (
     <div className="app">
       <Header transparent={transparentHeader} />
-
       <Outlet />
-
       <Footer />
     </div>
   );
