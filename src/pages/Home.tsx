@@ -13,7 +13,6 @@ export default function Home() {
                 limited series
               </span>
             </span>
-
             <ArrowRight className="home-banner-arrow" />
           </a>
         </div>

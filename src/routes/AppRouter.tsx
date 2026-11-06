@@ -1,9 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "../components/Layout";
-
 import Home from "../pages/Home";
-// import Catalog from "../pages/Catalog";
-// import Limited from "../pages/Limited";
+import Catalog from "../pages/Catalog";
+import Limited from "../pages/LimitedCatalog";
 // import Product from "../pages/Product";
 import About from "../pages/About";
 import Contacts from "../pages/Contacts";
@@ -18,12 +17,12 @@ export default function AppRouter() {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/catalog" element={<Catalog />} />
-          <Route path="/catalog/limited"element={<Limited />}/>
-          <Route path="/product/:id" element={<Product />} />*/}
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/limitedcatalog" element={<Limited />} />
+          {/* <Route path="/product/:id" element={<Product />} />
           {/* <Route path="/account" element={<PersonalCabinet />} />
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/reviews" element={<Reviews />} />

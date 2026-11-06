@@ -3,7 +3,7 @@ import "../styles/Footer.css";
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-brand">YŌJU GUITARS</div>
+      <div className="footer-brand">YŌJŪ GUITARS</div>
       <p className="footer-tagline">Built for your sound.</p>
 
       <div className="footer-socials">
@@ -15,7 +15,7 @@ export default function Footer() {
       </div>
 
       <p className="footer-copyright">
-        © 2026 YŌJU Guitars. All rights reserved.
+        © 2026 YŌJŪ Guitars. All rights reserved.
       </p>
     </footer>
   );

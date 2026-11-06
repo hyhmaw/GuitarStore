@@ -1,75 +1,49 @@
-
+import logo from "../img/logo.png";
 import { useState } from "react";
-import {
-  Menu,
-  ShoppingCart,
-  Moon,
-  Sun,
-  UserRound,
-  X,
-} from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Menu, Moon, Sun, UserRound, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import "../styles/Header.css";
+import SideMenu from "./MobileNav";
+import whiteLogo from "../img/logo-white.png";
 
 type HeaderProps = {
   transparent?: boolean;
 };
 
-export default function Header({
-  transparent: transparentProp,
-}: HeaderProps) {
+export default function Header({ transparent = false }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
-  const location = useLocation();
-
-  const transparent =
-    transparentProp ??
-    (location.pathname === "/" || location.pathname === "/about");
-
-  const closeMenu = () => setMenuOpen(false);
+  const toggleTheme = () => {
+    const nextTheme = !darkMode;
+    setDarkMode(nextTheme);
+    document.documentElement.dataset.theme = nextTheme ? "dark" : "light";
+  };
 
   return (
-    <header
-      className={`header ${
-        transparent ? "header-transparent" : "header-white"
-      } ${menuOpen ? "header-menu-open" : ""}`}
-    >
+    <header className={`header ${transparent ? "header-transparent" : "header-white"}`}>
       <button
         className="header-menu-button"
+        onClick={() => setMenuOpen(!menuOpen)}
         aria-label={menuOpen ? "Close menu" : "Open menu"}
         aria-expanded={menuOpen}
-        onClick={() => setMenuOpen(!menuOpen)}
       >
         {menuOpen ? <X /> : <Menu />}
       </button>
 
-      <nav
-        className={`header-navigation ${
-          menuOpen ? "header-navigation-open" : ""
-        }`}
-      >
-        <Link to="/catalog" onClick={closeMenu}>
-          CATALOG
-        </Link>
-
-        <Link to="/about" onClick={closeMenu}>
-          ABOUT US
-        </Link>
-
-        <Link to="/contacts" onClick={closeMenu}>
-          CONTACTS
-        </Link>
-      </nav>
+      <Link to="/" className="header-logo" aria-label="YŌJU Guitars home">
+  <img
+    src={transparent ? whiteLogo : logo}
+    alt="YŌJU Guitars Logo"
+    className="header-logo-image"
+  />
+</Link>
 
       <div className="header-actions">
-        <Link to="/cart" aria-label="Shopping cart">
-          <ShoppingCart />
-        </Link>
-
         <button
+          className="header-theme-button"
+          onClick={toggleTheme}
           aria-label="Toggle theme"
-          onClick={() => setDarkMode(!darkMode)}
         >
           {darkMode ? <Sun /> : <Moon />}
         </button>
@@ -78,6 +52,8 @@ export default function Header({
           <UserRound />
         </Link>
       </div>
+
+      <SideMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </header>
   );
 }
