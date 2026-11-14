@@ -78,7 +78,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       <div className="product-card-info">
         <h3>{name}</h3>
-        <p>{price.toLocaleString("en-US")} €</p>
+        <p>{(price / 100).toLocaleString("en-US")} €</p>
       </div>
     </article>
   );

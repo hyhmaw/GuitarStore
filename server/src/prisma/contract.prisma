@@ -129,6 +129,4 @@ model Review {
 
   @@index([userId])
   @@index([productId])
-  @@unique([userId, productId])
-  @@map("reviews")
 }
