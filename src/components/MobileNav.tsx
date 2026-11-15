@@ -15,6 +15,7 @@ const pages = [
   { name: "ABOUT US", path: "/about" },
   { name: "CONTACTS", path: "/contacts" },
   { name: "ACCOUNT", path: "/PersonalCabinet" },
+  { name: "CART", path: "/cart" },
 ];
 
 export default function SideMenu({ isOpen, onClose }: MobileMenuProps) {

@@ -11,7 +11,7 @@ import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
 import Catalog from "./pages/Catalog";
 import LimitedCatalog from "./pages/LimitedCatalog";
-// import Product from "./pages/Product";
+import Product from "./pages/Product";
 // import Account from "./pages/Account";
 // import Registration from "./pages/Registration";
 // import Reviews from "./pages/Reviews";
@@ -39,6 +39,7 @@ export default function App() {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/limited" element={<LimitedCatalog />} />
+        <Route path="/product/:id" element={<Product />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
