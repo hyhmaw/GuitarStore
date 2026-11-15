@@ -30,7 +30,7 @@
 
 .header-transparent:hover,
 .header-transparent:focus-within {
-  background: rgba(255, 255, 255, 0.94);
+  background: rgb(255, 255, 255);
 }
 
 /* MENU BUTTON */
@@ -148,3 +148,27 @@
     transition: none;
   }
 }
+
+/* DARK THEME */
+
+.header {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.header-transparent {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+/* Сохраняем прозрачность шапки на главной и About */
+.header-transparent:hover,
+.header-transparent:focus-within {
+  background: var(--surface);
+}
+
+.header-menu-button,
+.header-actions a,
+.header-actions button {
+  color: var(--text);
+}
+

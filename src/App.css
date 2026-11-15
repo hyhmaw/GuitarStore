@@ -1,4 +1,28 @@
 .app {
+  --input-bg: #ffffff;
+--input-text: #222222;
+--filter-bg: #ffffff;
+--filter-text: #222222;
+--dropdown-bg: #ffffff;
+--dropdown-text: #222222;
+--option-text: #555555;
+--scrollbar: #aaaaaa;
+  --page-bg: #f1f0eb;
+  --surface: #ffffff;
+  --text: #222222;
+  --secondary-text: #666666;
+  --border: #ddddda;
+  --accent: #86791c;
+  --input-bg: #ffffff;
+--input-text: #222222;
+--filter-bg: #e8e7e2;
+--filter-text: #222222;
+
+  --header-bg: rgb(225, 221, 204);
+  --footer-bg: #666666;
+  --footer-text: #ffffff;
+  --overlay: rgba(0, 0, 0, 0.22);
+
   width: 100%;
   min-height: 100vh;
   min-height: 100svh;
@@ -7,63 +31,61 @@
 
   display: flex;
   flex-direction: column;
+
+  color: var(--text);
+  background: var(--page-bg);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
+
+/* DARK THEME */
+
+.app.dark-mode {
+  --input-bg: #292929;
+--input-text: #eeeeeb;
+--filter-bg: #222222;
+--filter-text: #eeeeeb;
+--dropdown-bg: #242424;
+--dropdown-text: #eeeeeb;
+--option-text: #c4c4be;
+--scrollbar: #666666;
+  --input-bg: #292929;
+--input-text: #eeeeeb;
+--filter-bg: #292929;
+--filter-text: #eeeeeb;
+  --page-bg: #171717;
+  --surface: #222222;
+  --text: #eeeeeb;
+  --secondary-text: #aaaaa5;
+  --border: #393939;
+  --accent: #b4a34b;
+
+  --header-bg: rgb(25, 25, 25);
+  --footer-bg: #101010;
+  --footer-text: #eeeeeb;
+  --overlay: rgba(0, 0, 0, 0.55);
+}
+
+/* HEADER */
+
 .header {
   transition: background 0.3s ease;
 }
 
-.header:hover {
-  background: rgba(255, 255, 255, 0.95);
+.header.header-white {
+  background: var(--page-bg);
 }
 
-*{
-  box-sizing: border-box;
+.header.header-transparent:hover {
+  background: var(--header-bg);
 }
 
-html,
-body,
-#root {
-  margin: 0;
-  min-height: 100%;
-  width: 100%;
+.app.dark-mode .header.header-white {
+  background: #171717;
 }
 
-body {
-  font-family: "Inter", sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  color: inherit;
-  font: inherit;
-}
-
-.app {
-  --text: #111111;
-  --header-bg: rgba(225, 221, 204, 0.58);
-  --footer-bg: #666666;
-  --footer-text: #111111;
-  --overlay: rgba(0, 0, 0, 0.22);
-
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  color: var(--text);
-  background: white;
-  transition: background 0.25s, color 0.25s;
-}
-
-.app.dark-mode {
-  --text: #f5f5f5;
-  --header-bg: rgba(25, 25, 25, 0.75);
-  --footer-bg: #222222;
-  --footer-text: #f5f5f5;
-  --overlay: rgba(0, 0, 0, 0.4);
-
-  background: #151515;
+.app.dark-mode .header.header-transparent:hover {
+  background: rgba(25, 25, 25, 0.95);
 }

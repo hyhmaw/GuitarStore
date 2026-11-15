@@ -115,3 +115,31 @@
     display: none;
   }
 }
+
+/* DARK THEME */
+
+.mobile-menu {
+  background: var(--dropdown-bg);
+  color: var(--text);
+}
+
+.mobile-menu:hover {
+  background: var(--dropdown-bg);
+}
+
+.mobile-menu-link {
+  color: var(--text);
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link.active {
+  color: var(--accent);
+}
+
+.mobile-menu-close {
+  color: var(--text);
+}
+
+.mobile-menu-close:hover {
+  color: var(--accent);
+}

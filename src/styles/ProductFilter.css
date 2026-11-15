@@ -137,3 +137,87 @@
   accent-color: #86791c;
   cursor: pointer;
 }
+
+/* THEME */
+
+.product-filters {
+  color: var(--text);
+}
+
+.filters-toggle {
+  color: var(--text);
+}
+
+.filters-toggle:hover,
+.filters-toggle.active {
+  color: var(--accent);
+}
+
+.filters-dropdown {
+  background: var(--dropdown-bg);
+  color: var(--dropdown-text);
+  border-color: var(--border);
+}
+
+.filters-dropdown-header {
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.filters-dropdown-header button {
+  color: var(--secondary-text);
+}
+
+.filters-dropdown-header button:hover {
+  color: var(--text);
+}
+
+.filter-section {
+  border-color: var(--border);
+}
+
+.filter-section-button {
+  color: var(--text);
+}
+
+.filter-section-button:hover {
+  color: var(--accent);
+}
+
+.filter-section-content {
+  color: var(--text);
+}
+
+.price-inputs input {
+  background: var(--input-bg);
+  color: var(--input-text);
+  border-color: var(--border);
+}
+
+.price-inputs input::placeholder {
+  color: var(--secondary-text);
+}
+
+.price-inputs input:focus {
+  border-color: var(--accent);
+}
+
+.price-inputs span {
+  color: var(--secondary-text);
+}
+
+.filter-option {
+  color: var(--option-text);
+}
+
+.filter-option:hover {
+  color: var(--text);
+}
+
+.filter-option input {
+  accent-color: var(--accent);
+}
+
+.filter-chevron {
+  color: inherit;
+}

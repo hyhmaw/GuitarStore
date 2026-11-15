@@ -269,3 +269,100 @@
     display: none !important;
   }
 }
+/* THEME */
+
+.catalog-page {
+  color: var(--text);
+}
+
+.catalog-heading,
+.catalog-more,
+.catalog-more-desktop,
+.catalog-more-mobile {
+  color: var(--text);
+}
+
+.flagship-list {
+  scrollbar-color: var(--scrollbar) transparent;
+}
+
+.catalog-tools,
+.catalog-toolbar,
+.catalog-mobile-filters {
+  border-color: var(--border);
+}
+
+.catalog-search {
+  color: var(--text);
+}
+
+.catalog-search::placeholder {
+  color: var(--secondary-text);
+}
+
+.catalog-sort-label {
+  color: var(--text);
+}
+
+.catalog-sort,
+.catalog-mobile-filters select,
+.limited-filters select {
+  background: var(--input-bg);
+  color: var(--input-text);
+  border-color: var(--border);
+}
+
+.catalog-message {
+  color: var(--secondary-text);
+}
+
+.catalog-mobile-filters summary {
+  color: var(--text);
+}
+
+.catalog-sort option,
+.catalog-mobile-filters select option {
+  background: var(--dropdown-bg);
+  color: var(--dropdown-text);
+}
+/* DARK THEME — CONTACTS */
+
+.app.dark-mode .contacts-page {
+  color: #eeeeeb;
+}
+
+.app.dark-mode .contacts-title,
+.app.dark-mode .contacts-item h2,
+.app.dark-mode .contacts-form label,
+.app.dark-mode .contacts-description,
+.app.dark-mode .contacts-socials span {
+  color: #eeeeeb;
+}
+
+.app.dark-mode .contacts-section-title,
+.app.dark-mode .contacts-item a,
+.app.dark-mode .contacts-socials a {
+  color: #b4a34b;
+}
+
+.app.dark-mode .contacts-form input,
+.app.dark-mode .contacts-form textarea {
+  background: #292929;
+  color: #eeeeeb;
+  border-color: #555;
+}
+
+.app.dark-mode .contacts-form input::placeholder,
+.app.dark-mode .contacts-form textarea::placeholder {
+  color: #b4a34b;
+}
+
+.app.dark-mode .contacts-form button {
+  color: #b4a34b;
+  border-color: #b4a34b;
+}
+
+.app.dark-mode .contacts-form button:hover {
+  background: #b4a34b;
+  color: #171717;
+}

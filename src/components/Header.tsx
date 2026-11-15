@@ -1,27 +1,32 @@
 import logo from "../img/logo.png";
-import { useState } from "react";
+import whiteLogo from "../img/logo-white.png";
+
 import { Menu, Moon, Sun, UserRound, X } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+
 import "../styles/Header.css";
 import SideMenu from "./MobileNav";
-import whiteLogo from "../img/logo-white.png";
 
 type HeaderProps = {
   transparent?: boolean;
+  darkMode: boolean;
+  onToggleTheme: () => void;
 };
 
-export default function Header({ transparent = false }: HeaderProps) {
+export default function Header({
+  transparent = false,
+  darkMode,
+  onToggleTheme,
+}: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleTheme = () => {
-    const nextTheme = !darkMode;
-    setDarkMode(nextTheme);
-    document.documentElement.dataset.theme = nextTheme ? "dark" : "light";
-  };
 
   return (
-    <header className={`header ${transparent ? "header-transparent" : "header-white"}`}>
+    <header
+      className={`header ${
+        transparent ? "header-transparent" : "header-white"
+      }`}
+    >
       <button
         className="header-menu-button"
         onClick={() => setMenuOpen(!menuOpen)}
@@ -32,18 +37,18 @@ export default function Header({ transparent = false }: HeaderProps) {
       </button>
 
       <Link to="/" className="header-logo" aria-label="YŌJU Guitars home">
-  <img
-    src={transparent ? whiteLogo : logo}
-    alt="YŌJU Guitars Logo"
-    className="header-logo-image"
-  />
-</Link>
+        <img
+          src={transparent || darkMode ? whiteLogo : logo}
+          alt="YŌJU Guitars Logo"
+          className="header-logo-image"
+        />
+      </Link>
 
       <div className="header-actions">
         <button
           className="header-theme-button"
-          onClick={toggleTheme}
-          aria-label="Toggle theme"
+          onClick={onToggleTheme}
+          aria-label={darkMode ? "Switch to light theme" : "Switch to dark theme"}
         >
           {darkMode ? <Sun /> : <Moon />}
         </button>
@@ -53,7 +58,10 @@ export default function Header({ transparent = false }: HeaderProps) {
         </Link>
       </div>
 
-      <SideMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+      <SideMenu
+        isOpen={menuOpen}
+        onClose={() => setMenuOpen(false)}
+      />
     </header>
   );
 }

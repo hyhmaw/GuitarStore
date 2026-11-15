@@ -1,4 +1,4 @@
-
+import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import Header from "./components/Header";
@@ -12,15 +12,24 @@ import NotFound from "./pages/NotFound";
 import Catalog from "./pages/Catalog";
 import LimitedCatalog from "./pages/LimitedCatalog";
 import Product from "./pages/Product";
-// import Account from "./pages/Account";
-// import Registration from "./pages/Registration";
-// import Reviews from "./pages/Reviews";
-// import Order from "./pages/Order";
 
 import "./App.css";
 
 export default function App() {
   const location = useLocation();
+
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = darkMode ? "dark" : "light";
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
+
+  const toggleTheme = () => {
+    setDarkMode((prev) => !prev);
+  };
 
   const transparentHeaderPages = ["/", "/about"];
   const transparentHeader = transparentHeaderPages.includes(
@@ -28,10 +37,14 @@ export default function App() {
   );
 
   return (
-    <div className="app">
+    <div className={`app ${darkMode ? "dark-mode" : ""}`}>
       <PageMeta />
 
-      <Header transparent={transparentHeader} />
+      <Header
+        transparent={transparentHeader}
+        darkMode={darkMode}
+        onToggleTheme={toggleTheme}
+      />
 
       <Routes>
         <Route path="/" element={<Home />} />
