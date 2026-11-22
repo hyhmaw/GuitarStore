@@ -1,19 +1,26 @@
-
 import { useEffect, useState } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams, useNavigate } from "react-router-dom";
 
 import type { Product as ProductType } from "../components/ProductCard";
 import { getProducts } from "../services/productService";
+import { addToCart } from "../utils/cart";
+
+import CartNotification, {
+  type CartNotificationProduct,
+} from "../components/CartNotification";
 
 import "../styles/Product.css";
 
 export default function Product() {
   const { id } = useParams();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const [product, setProduct] = useState<ProductType | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [notification, setNotification] =
+    useState<CartNotificationProduct | null>(null);
 
   const from = (location.state as { from?: string } | null)?.from;
   const backPath = from === "/limited" ? "/limited" : "/catalog";
@@ -40,6 +47,18 @@ export default function Product() {
       });
   }, [id]);
 
+  const handleAddToCart = () => {
+    if (!product) return;
+
+    addToCart(product);
+
+    setNotification({
+      name: product.name,
+      price: product.price,
+      image: product.images[0],
+    });
+  };
+
   if (loading) {
     return <main className="product-page">Loading...</main>;
   }
@@ -60,7 +79,11 @@ export default function Product() {
           ← BACK TO CATALOG
         </Link>
 
-        <Link to="/reviews" className="product-reviews-link">
+        <Link
+          to="/reviews"
+          state={{ productId: product.id }}
+          className="product-reviews-link"
+        >
           REVIEWS →
         </Link>
       </nav>
@@ -105,11 +128,23 @@ export default function Product() {
             Product description will be displayed here.
           </p>
 
-          <button className="product-add-button" type="button">
+          <button
+            className="product-add-button"
+            type="button"
+            onClick={handleAddToCart}
+          >
             ADD TO CART
           </button>
         </div>
       </section>
+
+      <CartNotification
+        product={notification}
+        onClose={() => setNotification(null)}
+        onCheckout={() => navigate("/checkout")}
+        onViewCart={() => navigate("/cart")}
+        onContinueShopping={() => setNotification(null)}
+      />
     </main>
   );
 }

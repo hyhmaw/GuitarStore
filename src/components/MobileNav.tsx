@@ -14,7 +14,7 @@ const pages = [
   { name: "LIMITED", path: "/catalog#limited", mobilePath: "/limited" },
   { name: "ABOUT US", path: "/about" },
   { name: "CONTACTS", path: "/contacts" },
-  { name: "ACCOUNT", path: "/PersonalCabinet" },
+  { name: "ACCOUNT", path: "/Account" },
   { name: "CART", path: "/cart" },
 ];
 

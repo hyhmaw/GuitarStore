@@ -53,9 +53,9 @@ export default function Header({
           {darkMode ? <Sun /> : <Moon />}
         </button>
 
-        <Link to="/PersonalCabinet" aria-label="Personal cabinet">
-          <UserRound />
-        </Link>
+        <Link to="/account" aria-label="Personal cabinet">
+  <UserRound />
+</Link>
       </div>
 
       <SideMenu

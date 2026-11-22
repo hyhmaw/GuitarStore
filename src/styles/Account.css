@@ -1,0 +1,567 @@
+
+.account-page {
+  min-height: 70vh;
+  padding: 150px 6% 100px;
+  background: var(--page-bg);
+  color: var(--text);
+}
+
+.account-container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.account-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+}
+
+.account-eyebrow {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--secondary-text);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.account-heading h1 {
+  margin: 0;
+  font-family: "Aboreto", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.account-logout,
+.account-edit-button,
+.account-cancel-button,
+.account-save-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.account-logout svg,
+.account-edit-button svg,
+.account-cancel-button svg,
+.account-save-button svg {
+  width: 15px;
+  height: 15px;
+}
+
+.account-logout:hover,
+.account-edit-button:hover,
+.account-cancel-button:hover {
+  background: var(--surface);
+}
+
+.account-save-button {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: white;
+}
+
+.account-save-button:hover {
+  opacity: 0.8;
+}
+
+.account-profile,
+.account-collection,
+.account-orders,
+.account-payment {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.account-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.account-section-heading h2 {
+  margin: 0;
+  font-family: "Aboreto", sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.account-section-heading > span {
+  color: var(--secondary-text);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.account-edit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.account-profile-content {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 55px;
+  align-items: start;
+}
+
+.account-avatar-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.account-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+}
+
+.account-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.account-avatar > svg {
+  width: 50px;
+  height: 50px;
+  color: var(--secondary-text);
+  stroke-width: 1;
+}
+
+.account-avatar-upload {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 2px solid var(--page-bg);
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+.account-avatar-upload svg {
+  width: 17px;
+  height: 17px;
+}
+
+.account-profile-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 45px;
+}
+
+.account-field {
+  min-width: 0;
+}
+
+.account-field label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--secondary-text);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.account-field p {
+  margin: 0;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.account-field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  outline: none;
+  background: var(--input-bg);
+  color: var(--input-text);
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.account-field input:focus {
+  border-color: var(--accent);
+}
+
+.account-message {
+  margin: 22px 0 0;
+  color: var(--secondary-text);
+  font-size: 12px;
+}
+
+.account-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 45px 20px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.account-empty > svg {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 20px;
+  color: var(--secondary-text);
+  stroke-width: 1.2;
+}
+
+.account-empty h3 {
+  margin: 0 0 12px;
+  font-family: "Aboreto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.account-empty p {
+  margin: 0 0 22px;
+  color: var(--secondary-text);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.account-empty button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 20px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: white;
+  font-size: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.account-empty button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.account-empty button:hover {
+  opacity: 0.8;
+}
+
+/* PAYMENT METHODS */
+
+.account-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.account-payment-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.account-payment-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.account-payment-card-top svg {
+  width: 25px;
+  height: 25px;
+  stroke-width: 1.3;
+}
+
+.account-payment-card-top span {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+
+.account-card-number {
+  margin: 28px 0;
+  font-size: 19px;
+  letter-spacing: 2px;
+}
+
+.account-payment-card-bottom {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 18px;
+  align-items: end;
+}
+
+.account-payment-card-bottom span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--secondary-text);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.account-payment-card-bottom p {
+  margin: 0;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.account-remove-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--secondary-text);
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.account-remove-card:hover {
+  background: var(--surface);
+  color: #c94b4b;
+}
+
+.account-remove-card svg {
+  width: 15px;
+  height: 15px;
+}
+
+.account-add-card-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 22px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-size: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.account-add-card-button:hover {
+  background: var(--surface);
+}
+
+.account-add-card-button svg {
+  width: 15px;
+  height: 15px;
+}
+
+.account-card-form {
+  margin-top: 25px;
+  padding: 25px;
+  border: 1px solid var(--border);
+}
+
+.account-card-form-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.account-card-form-heading h3 {
+  margin: 0;
+  font-family: "Aboreto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.account-card-form-heading button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.account-card-form-heading button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.account-card-form-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 30px;
+}
+
+.account-card-expiry {
+  max-width: 180px;
+}
+
+.account-card-error {
+  margin: 18px 0 0;
+  color: #c94b4b;
+  font-size: 12px;
+}
+
+.account-card-security-note {
+  margin: 22px 0;
+  color: var(--secondary-text);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.account-save-card-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 20px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: white;
+  font-size: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.account-save-card-button:hover {
+  opacity: 0.8;
+}
+
+.account-save-card-button svg {
+  width: 15px;
+  height: 15px;
+}
+
+@media (max-width: 768px) {
+  .account-page {
+    padding: 120px 5% 70px;
+  }
+
+  .account-heading {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .account-heading h1 {
+    font-size: 27px;
+  }
+
+  .account-logout {
+    padding: 10px;
+    font-size: 9px;
+  }
+
+  .account-profile,
+  .account-collection,
+  .account-orders,
+  .account-payment {
+    padding: 30px 0;
+  }
+
+  .account-section-heading h2 {
+    font-size: 17px;
+  }
+
+  .account-profile-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .account-avatar-wrapper {
+    width: 110px;
+    height: 110px;
+  }
+
+  .account-profile-fields {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .account-edit-actions {
+    gap: 6px;
+  }
+
+  .account-edit-button,
+  .account-cancel-button,
+  .account-save-button {
+    padding: 10px;
+    font-size: 9px;
+  }
+
+  .account-empty {
+    padding: 35px 15px;
+  }
+
+  .account-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .account-card-form {
+    padding: 18px;
+  }
+
+  .account-card-form-fields {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .account-card-expiry {
+    max-width: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .account-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .account-payment-card {
+    padding: 18px;
+  }
+
+  .account-payment-card-bottom {
+    grid-template-columns: 1fr auto;
+  }
+
+  .account-remove-card {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .account-card-number {
+    font-size: 16px;
+  }
+}

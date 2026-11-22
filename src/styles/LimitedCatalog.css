@@ -119,3 +119,45 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* DARK THEME */
+
+.limited-page {
+  color: var(--text);
+}
+
+.limited-page .catalog-heading {
+  color: var(--text);
+}
+
+.limited-tools {
+  border-color: var(--border);
+}
+
+.limited-search {
+  color: var(--text);
+  background: transparent;
+}
+
+.limited-search::placeholder {
+  color: var(--secondary-text);
+}
+
+.limited-sort-label {
+  color: var(--text);
+}
+
+.limited-sort {
+  background: var(--input-bg);
+  color: var(--input-text);
+  border-color: var(--border);
+}
+
+.limited-sort option {
+  background: var(--dropdown-bg);
+  color: var(--dropdown-text);
+}
+
+.limited-page .catalog-message {
+  color: var(--secondary-text);
+}
