@@ -1,9 +1,15 @@
 import express from 'express';
 import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { db } from './prisma/db.js';
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env['PORT'] ?? 3000);
+const PUBLIC_URL = process.env['PUBLIC_URL'] ?? `http://localhost:${PORT}`;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(
   cors({
@@ -12,6 +18,11 @@ app.use(
 );
 
 app.use(express.json());
+
+app.use(
+  '/images',
+  express.static(path.join(__dirname, '../public/products'))
+);
 
 app.get('/health', (_req, res) => {
   res.status(200).json({
@@ -32,7 +43,9 @@ app.get('/products', async (_req, res) => {
 
     const result = products.map((product) => ({
       ...product,
-      images: product.images.map((image) => image.imageUrl),
+      // У базі зберігається відносний шлях (/images/...),
+      // повну адресу сервер додає сам — так посилання не ламаються після деплою.
+      images: product.images.map((image) => `${PUBLIC_URL}${image.imageUrl}`),
     }));
 
     res.status(200).json({
